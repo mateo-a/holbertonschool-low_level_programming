@@ -13,8 +13,8 @@ int main(void)
 
 	while (a <= 57)
 	{
-		while (b <= 57) 
-		{	
+		while (b <= 57)
+		{
 		putchar(a);
 		putchar(b);
 		if (a != 56 || b != 57)
@@ -23,8 +23,8 @@ int main(void)
 			putchar(' ');
 		}
 		b++;
-		}	
-	c++;
+		}
+		c++;
 	b = c;
 	a++;
 	}
