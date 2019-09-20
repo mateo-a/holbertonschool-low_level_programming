@@ -1,38 +1,39 @@
-#include <stdio.h>
+nclude <stdio.h>
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
+  * main - Entry point
+  * Inès Chokri
+  * Return: Always 0 (Success)
+  */
 int main(void)
 {
-	int a, b;
-	int c, d;
 
-	for (c = 0; c <= 9; c++)
+	int i, j;
+	int m, n;
+
+	for (m = 0; m < 10; m++)
 	{
-	for (d = 0; d <= 8; d++)
-	{
-		for (a = 0; a <= 9; a++)
+		for (n = 0; n < 9; n++)
 		{
-			for (b = 0; b <= 9; b++)
-			{
-				if (c != a || d != b)
+			for (i = 0; i < 10; i++)
+				for (j = 0; j < 10; j++)
 				{
-				putchar(c + '0');
-				putchar(d + '0');
+				{
+				if (m != i || n != j)
+				{
+				putchar(m + '0');
+				putchar(n + '0');
 				putchar(' ');
-				putchar(a + '0');
-				putchar(b + '0');
-				if (a != 9 || b != 9 || c != 9 || d != 8)
-					{
-					putchar(',');
-					putchar(' ');
-					}
+				putchar(i + '0');
+				putchar(j + '0');
+				if (i != 9 || j != 9 || m != 9 || n != 8)
+				{
+				putchar(',');
+				putchar(' ');
+				}	
+				}	
 				}
-			}
+				}
 		}
-	}
 	}
 	putchar('\n');
 	return (0);
