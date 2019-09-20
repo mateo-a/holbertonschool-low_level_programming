@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 /**
   * main - Entry point
   * Inès Chokri
@@ -29,8 +29,8 @@ int main(void)
 				{
 				putchar(',');
 				putchar(' ');
-				}	
-				}	
+				}
+				}
 				}
 				}
 		}
