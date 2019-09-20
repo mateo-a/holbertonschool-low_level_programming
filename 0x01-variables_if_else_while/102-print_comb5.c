@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
 * main - Entry point
-* Inès Chokri
+*
 * Return: Always 0 (Success)
 */
 int main(void)
 {
-int a, b, c, d;
+	int a, b, c, d;
 
-for (c = 0; c < 10; c++)
-{
-	for (d = 0; d < 9; d++)
+	for (c = 0; c <= 9; c++)
 	{
-		for (a = 0; a < 10; a++)
+	for (d = 0; d <= 8; d++)
+	{
+		for (a = 0; a <= 9; a++)
 		{
-			for (b = 0; b < 10; b++)
+			for (b = 0; b <= 9; b++)
 			{
 				if (c != a || d != b)
 				{
@@ -23,7 +23,7 @@ for (c = 0; c < 10; c++)
 				putchar(' ');
 				putchar(a + '0');
 				putchar(b + '0');
-					if (a != 9 || b != 9 || c != 9 || d != 8)
+				if (a != 9 || b != 9 || c != 9 || d != 8)
 					{
 					putchar(',');
 					putchar(' ');
@@ -32,7 +32,7 @@ for (c = 0; c < 10; c++)
 			}
 		}
 	}
-}
-putchar('\n');
-return (0);
+	}
+	putchar('\n');
+	return (0);
 }
