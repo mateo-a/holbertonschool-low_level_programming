@@ -1,40 +1,45 @@
 #include <stdio.h>
 /**
-  * main - Entry point
-  * Inès Chokri
-  * Return: Always 0 (Success)
-  */
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
+
 int main(void)
 {
+int i, j;
+int array[4];
+int A;
+int B;
 
-	int i, j;
-	int m, n;
-
-	for (m = 0; m < 10; m++)
-	{
-		for (n = 0; n < 9; n++)
+for (i = 0; i < 100; i++)
+{
+	for (j = 0; j < 100; j++)
 		{
-			for (i = 0; i < 10; i++)
-				for (j = 0; j < 10; j++)
-				{
-				{
-				if (m != i || n != j)
-				{
-				putchar(m + '0');
-				putchar(n + '0');
-				putchar(' ');
-				putchar(i + '0');
-				putchar(j + '0');
-				if (i != 9 || j != 9 || m != 9 || n != 8)
-				{
-				putchar(',');
-				putchar(' ');
-				}
-				}
-				}
-				}
+		if (i != j)
+		{
+		array[0] = i / 10;
+		array[1] = i % 10;
+		array[2] = j / 10;
+		array[3] = j % 10;
+		A = i * 100 + j;
+		B = j * 100 + i;
+			if (A < B)
+			{
+			putchar(array[0] + '0');
+			putchar(array[1] + '0');
+			putchar(32);
+			putchar(array[2] + '0');
+			putchar(array[3] + '0');
+			if ((i != 98) || (j != 99))
+			{
+			putchar(44);
+			putchar(32);
+			}
+			}
 		}
-	}
-	putchar('\n');
-	return (0);
+}
+}
+putchar('\n');
+return (0);
 }
