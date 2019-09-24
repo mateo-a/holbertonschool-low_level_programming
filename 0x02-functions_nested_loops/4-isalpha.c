@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
- *main-prints out Holberton, followed by new line
+ *_isalpha - checks for alphabetic character
+ *@c: Input parameter in ASCII
  *
- *Return: 0
+ *Return: 1 if c is a letter, lowercase or uppercase
+ *	  0 otherwise
  */
 
 int _isalpha(int c)
