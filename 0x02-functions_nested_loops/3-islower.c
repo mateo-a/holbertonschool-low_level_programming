@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include "holberton.h"
+
 /**
- *main-prints out Holberton, followed by new line
+ *_islower - checks for lowercase character
+ *void: c with a parameter in ASCII
  *
- *Return: 0
+ *Return: 1 if is lowercase, 0 otherwise
  */
 
 int _islower(int c)
