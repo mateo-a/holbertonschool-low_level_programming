@@ -1,9 +1,11 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
- *main-prints out Holberton, followed by new line
+ *print_sign - prints the sign of a number
+ *@n: An integer number
  *
- *Return: 0
+ *Return: 1 if n is greater than zero
+ *	  0 if n is zero
+ *	 -1 if n is less than zero
  */
 
 int print_sign(int n)
