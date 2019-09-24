@@ -2,7 +2,7 @@
 
 /**
  *_islower - checks for lowercase character
- *void: c with a parameter in ASCII
+ *@c: Input parameter in ASCII
  *
  *Return: 1 if is lowercase, 0 otherwise
  */
