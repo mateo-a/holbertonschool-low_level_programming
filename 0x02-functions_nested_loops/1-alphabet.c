@@ -1,9 +1,11 @@
-#include <stdio.h>
 #include "holberton.h"
+
 /**
- *main-prints out Holberton, followed by new line
+ * print_alphabet - writes the alphabet in lowercase
+ * void: No input parameter
  *
- *Return: 0
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 
 void print_alphabet(void)
