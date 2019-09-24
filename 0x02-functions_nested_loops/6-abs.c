@@ -1,9 +1,9 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
- *main-prints out Holberton, followed by new line
+ *_abs - computes the absolute value of an integer
+ *@n: An integer number
  *
- *Return: 0
+ *Return: n with the absolute value
  */
 
 int _abs(int n)
