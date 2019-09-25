@@ -16,20 +16,20 @@ int i, j;
 		{
 			for (j = 0; j <= n; j++)
 			{
-			if ((i * j) / 100 == 0 && j != 0) /* Hundreds */
+			if ((i * j) / 100 == 0 && j != 0) 
 			{
 			_putchar(' ');
-			if ((i * j) / 10 % 10 == 0) /* Tens */
+			if ((i * j) / 10 % 10 == 0) 
 			_putchar(' ');
 			else
-				_putchar((i * j) / 10 % 10 + '0'); /* Tens */
-				_putchar((i * j) % 10 + '0'); /* ones */
+				_putchar((i * j) / 10 % 10 + '0'); 
+				_putchar((i * j) % 10 + '0'); 
 			}
-			else if ((i * j) / 100 != 0) /* Hundreds */
+			else if ((i * j) / 100 != 0) 
 			{
-				_putchar((i * j) / 100 + '0'); /* Hundreds */
-				_putchar((i * j) / 10 % 10 + '0'); /* Tens */
-				_putchar((i * j) % 10 + '0'); /* Ones */
+				_putchar((i * j) / 100 + '0'); 
+				_putchar((i * j) / 10 % 10 + '0');
+				_putchar((i * j) % 10 + '0');
 			}
 			if (j == 0)
 				_putchar('0');
