@@ -8,9 +8,6 @@
 
 void print_times_table(int n)
 {
-/**
- * int row, column, ones, tens, hundreds, multiple;
- */
 int i, j;
 
 	if (n >= 0 && n <= 15)
