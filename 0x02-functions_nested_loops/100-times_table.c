@@ -16,18 +16,18 @@ int i, j;
 		{
 			for (j = 0; j <= n; j++)
 			{
-			if ((i * j) / 100 == 0 && j != 0) 
+			if ((i * j) / 100 == 0 && j != 0)
 			{
 			_putchar(' ');
-			if ((i * j) / 10 % 10 == 0) 
+			if ((i * j) / 10 % 10 == 0)
 			_putchar(' ');
 			else
-				_putchar((i * j) / 10 % 10 + '0'); 
-				_putchar((i * j) % 10 + '0'); 
+				_putchar((i * j) / 10 % 10 + '0');
+				_putchar((i * j) % 10 + '0');
 			}
-			else if ((i * j) / 100 != 0) 
+			else if ((i * j) / 100 != 0)
 			{
-				_putchar((i * j) / 100 + '0'); 
+				_putchar((i * j) / 100 + '0');
 				_putchar((i * j) / 10 % 10 + '0');
 				_putchar((i * j) % 10 + '0');
 			}
