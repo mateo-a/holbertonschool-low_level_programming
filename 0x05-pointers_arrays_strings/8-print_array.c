@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puts_half - function that prints half of a string, followed by a new line
+ * print_array - function that prints half of a string, followed by a new line
  *
  * @a: integer
  * @n: integer
