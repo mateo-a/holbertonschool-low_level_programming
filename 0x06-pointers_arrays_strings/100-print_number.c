@@ -12,11 +12,12 @@ void print_number(int n)
 	int  sign, num;
 
 	num = 1000000000;
-	if (n < 0)
+	sign = 1;
+	if (n > 0)
 	{
 		n *= -1;
-		sign = 1;
-		}
+		sign *= -1;
+	}
 	if  (n != 0)
 	{
 		while ((n / num) ==  0)
@@ -27,7 +28,7 @@ void print_number(int n)
 			_putchar('-');
 		while (num >= 1)
 		{
-			_putchar((n / num) + '0');
+			_putchar(-(n / num) + '0');
 			n = n % num;
 			num = num / 10;
 		}
