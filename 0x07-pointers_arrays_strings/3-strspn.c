@@ -10,7 +10,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int num;
+	unsigned int val;
 	int i, j, k;
 
 	i = 0;
@@ -25,7 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 		j = 0;
 		if (k == 0)
 			break;
-		num++;
+		val++;
 		i++;
 	}
 	return (i);
