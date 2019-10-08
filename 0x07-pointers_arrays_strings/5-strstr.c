@@ -5,7 +5,8 @@
  *
  * @haystack: string
  * @needle: string
- * Return: pointer to the beginning of the located substring, or NULL if the substring is not found
+ * Return: pointer to the beginning of the located substring, or NULL if the
+ *         substring is not found
  */
 
 
