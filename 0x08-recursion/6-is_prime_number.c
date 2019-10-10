@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _divisor - Returns 1 if the input integer is a prime number
+ * _factor - Returns 1 if the input integer is a prime number
  *
  * @base: integer
  * @number: integer
