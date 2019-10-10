@@ -20,17 +20,17 @@ int _strlen_recursion(char *s)
  * _palindrome - function that returns 1 if string is a palindrome and 0 if not
  *
  * @s: string
- * @long: length
+ * @lon: length
  * Return: integer
  */
 
-int _palindrome(char *s, int long)
+int _palindrome(char *s, int lon)
 {
-	if (long <= 1)
+	if (lon <= 1)
 		return (1);
-	if (*s == *(s + long - 1))
+	if (*s == *(s + lon - 1))
 	{
-		return (_palindrome(s + 1, long - 2));
+		return (_palindrome(s + 1, lon - 2));
 	}
 	else
 		return (0);
@@ -46,10 +46,10 @@ int _palindrome(char *s, int long)
 
 int is_palindrome(char *s)
 {
-	int long;
+	int lon;
 
-	long = _strlen_recursion(s);
-	if (long <= 1)
+	lon = _strlen_recursion(s);
+	if (lon <= 1)
 		return (1);
-	return (_palindrome(s, long));
+	return (_palindrome(s, lon));
 }
