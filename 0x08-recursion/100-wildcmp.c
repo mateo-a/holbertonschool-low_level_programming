@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * _puts_recursion - function that compares two strings and returns 1 if the
- *                   strings can be considered identical, otherwise return 0
+ * wildcmp - function that compares two strings and returns 1 if the
+ *           strings can be considered identical, otherwise return 0
  *
  *
  * @s1: string
