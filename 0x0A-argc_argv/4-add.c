@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - program that prints its name, followed by a new line
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] > 47 && *argv[i] < 58)
+			if (isdigit(*argv[i]))
 				add = add + atoi(argv[i]);
 			else
 			{
