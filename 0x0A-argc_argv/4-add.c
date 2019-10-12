@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 		for (i = 1; i < argc; i++)
 		{
 			if (isdigit(*argv[i]))
-				add = add + atoi(argv[i]);
+				add += atoi(argv[i]);
 			else if (argv[i][0] == 45 && isdigit(argv[i][1]))
-				add = add - (atoi(argv[i])) * -1;
+				return (0);
 			else
 			{
 				printf("Error\n");
