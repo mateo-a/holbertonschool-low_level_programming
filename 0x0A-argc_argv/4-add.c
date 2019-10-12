@@ -12,21 +12,19 @@
 
 int main(int argc, char **argv)
 {
-	int c, i, sum;
+	int i, j, sum = 0;
 
-	sum = 0;
-
-	for (c = 1; c < argc; c++)
+	for (j = 1; j < argc; j++)
 	{
-		for (i = 0; argv[c][i] != '\0'; i++)
+		for (i = 0; argv[j][i] != '\0'; i++)
 		{
-			if (!isdigit(argv[c][i]))
+			if (!isdigit(argv[j][i]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		sum += atoi(argv[c]);
+		sum += atoi(argv[j]);
 	}
 	printf("%d\n", sum);
 	return (0);
