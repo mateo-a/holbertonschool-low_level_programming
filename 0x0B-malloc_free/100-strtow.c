@@ -10,28 +10,29 @@
 char **strtow(char *str)
 {
 	char **array;
-	int i, j, k, l, words, len;
+	int i, j, count, len, k, m;
 
-	words = k = 0;
+	count = k = 0;
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-			words++;
+			count++;
 	}
-	if (words == 0)
+	if (count == 0)
 		return (NULL);
-	array = malloc(((words + 1) * sizeof(char *)));
+	array = malloc(((count + 1) * sizeof(char *)));
 	if (array == NULL)
 		return (NULL);
-	for (i = 0; str[i] !=  '\0' && k < words; i++)
+	for (i = 0; str[i] !=  '\0' && k < count; i++)
 	{
 		if (str[i] != ' ')
 		{
 			len = 0;
-			for (j = i; str[j] != ' ' && str[j] != '\0'; j++, len++)
-				;
+			j = i;
+			while (str[j] != ' ' && str[j] != '\0')
+				j++, len++;
 			array[k] = malloc((len + 1) * sizeof(char));
 			if (array[k] == NULL)
 			{
@@ -40,9 +41,9 @@ char **strtow(char *str)
 				free(array);
 				return (NULL);
 			}
-			for (l = 0; l < len; l++, i++)
-				array[k][l] = str[i];
-			array[k++][l] = '\0';
+			for (m = 0; m < len; m++, i++)
+				array[k][m] = str[i];
+			array[k++][m] = '\0';
 		}
 	}
 	array[k] = NULL;
