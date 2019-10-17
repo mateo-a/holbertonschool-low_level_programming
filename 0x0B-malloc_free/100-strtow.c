@@ -1,39 +1,83 @@
 #include "holberton.h"
 
 /**
- * strtow - function that splits a string into words
- * @str: char
- * Return: A pointer to an array of strings (words)
-           or NULL if str == NULL or str == ""pointer to an array of words
-*/
+ * _wcount - counts number of words
+ * @sw: string
+ *
+ * Return: int
+ */
+int _wcount(char *sw)
+{
+	int l, wc;
 
+	l = 0, wc = 0;
+	if (*(sw + l) == ' ')
+		l++;
+	while (*(sw + l))
+	{
+		if (*(sw + l) == ' ' && *(sw + l - 1) != ' ')
+			wc++;
+		if (*(sw + l) != ' '  && *(sw + l + 1) == 0)
+			wc++;
+		l++;
+	}
+	return (wc);
+}
+/**
+ * _trspace - Moves adress to remove trailig whitespaces
+ * @st: string
+ *
+ * Return: Pointer
+ */
+char *_trspace(char *st)
+{
+	while (*st == ' ')
+		st++;
+	return (st);
+}
+/**
+ * strtow - splits a string into words
+ * @str: string
+ *
+ * Return: Double Pointer
+ */
 char **strtow(char *str)
 {
-	int i, k, j = 0, words = 1, len = 0;
-	char **p;
+	char **s, *ts;
+	int l, l2, wc, i, j, fr, k;
 
-	if (str == NULL || str == '\0')
-		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
+	if (str == NULL || *str == 0)
+		return (0);
+	fr = 0;
+	wc = _wcount(str);
+	if (wc == 0)
+		return (0);
+	s = malloc((wc + 1) * sizeof(char *));
+	if (s == 0)
+		return (0);
+	ts = _trspace(str);
+	for (i = 0; i < wc; i++)
 	{
-		if (str[i] == 32 && str[i + 1] != 32)
-			words++;
-	}
-	p = malloc(words * sizeof(char *));
-	for (i = 0; i < words; i++)
-	{
-		len = 0;
-		for (; str[j] != '\0'; j++)
+		l = 0;
+		while (*(ts + l) != ' ' && *(ts + l) != 0)
+			l++;
+		s[i] = malloc((l + 1) * sizeof(char));
+		if (s[i] == 0)
 		{
-			if (str[j] != 32)
-				len++;
-			else
-				break;
+			fr = 1;
+			break;
 		}
-		p[i] = malloc(1 + len * sizeof(char));
-		for (k = 0; k < len; k++)
-			p[i][k] = str[j - len + k];
-		p[i][len] = '\0';
+		for (j = 0, l2 = 0; l2 < l; l2++, j++)
+			s[i][j] = *(ts + l2);
+		s[i][j] = '\0';
+		ts = _trspace(ts + l);
 	}
-	return (p);
+	s[i] = NULL;
+	if (fr == 1)
+	{
+		for (k = 0; k <= i; k++)
+			free(s[k]);
+		free(s);
+	}
+	return (s);
 }
