@@ -4,7 +4,7 @@
  * strtow - function that splits a string into words
  * @str: char
  * Return: A pointer to an array of strings (words)
-           or NULL if str == NULL or str == ""pointer to an array of words
+ *           or NULL if str == NULL or str == ""pointer to an array of words
 */
 
 char **strtow(char *str)
