@@ -13,10 +13,10 @@ int _isdigit(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		if (c[i] >= '0' && c[i] <= '9')
-			return (1);
+		if (c[i] >= 48 && c[i] <= 57)
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 /**
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	len = l1 + l2;
 	total = calloc(len, sizeof(int));
-	if (total == NULL || l1 < l2)
+	if (total == NULL)
 		puts("Error"), exit(98);
 	for (i = l2 - 1; i >= 0; i--)
 	{
