@@ -2,14 +2,6 @@
 #include <string.h>
 
 /**
- * main - program that multiplies two positive numbers
- *
- * @argc: argument counter
- * @argv: argument vector
- * Return: 0
- */
-
-/**
  * _isdigit - checks if it is fully a number
  * @num: string to validate
  * Return: 1 if is digit otherwise 0
