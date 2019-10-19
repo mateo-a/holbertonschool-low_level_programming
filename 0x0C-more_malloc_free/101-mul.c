@@ -20,6 +20,21 @@ int _isdigit(char *c)
 }
 
 /**
+ * _strlen - size of string
+ * @s: string to measure
+ * Return: size of string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (*(s + i) != '\0')
+		++i;
+	return (i);
+}
+
+/**
  * main - program that multiplies two positive numbers
  *
  * @argc: argument counter
@@ -37,8 +52,8 @@ int main(int argc, char *argv[])
 		puts("Error");
 		exit(98);
 	}
-	l1 = strlen(argv[1]);
-	l2 = strlen(argv[2]);
+	l1 = _strlen(argv[1]);
+	l2 = _strlen(argv[2]);
 	len = l1 + l2;
 	total = calloc(len, sizeof(int));
 	if (total == NULL)
