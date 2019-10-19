@@ -51,6 +51,11 @@ int main(int argc, char *argv[])
 		puts("Error");
 		exit(98);
 	}
+        if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
+        {
+                puts("0");
+                exit(0);
+        }
 	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	len = l1 + l2;
 	total = calloc(len, sizeof(int *));
