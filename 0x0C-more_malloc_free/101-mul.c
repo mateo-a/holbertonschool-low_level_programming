@@ -3,7 +3,7 @@
 
 /**
  * _isdigit - checks if it is fully a number
- * @num: string to validate
+ * @c: string to validate
  * Return: 1 if is digit otherwise 0
  */
 
@@ -17,6 +17,27 @@ int _isdigit(char *c)
 			return (1);
 	}
 	return (0);
+}
+
+/**
+ *_memset - sets first n bytes of the memory area
+ * @s: array to set
+ * @b: what to set it to
+ * @n: first n bytes
+ * Return: s
+ */
+
+void *_memset(void *s, int b, unsigned int n)
+{
+	if (n)
+	{
+		char *d = s;
+
+		do {
+			*d++ = b;
+		} while (--n);
+	}
+	return (s);
 }
 
 /**
