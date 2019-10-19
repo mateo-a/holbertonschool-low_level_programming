@@ -3,7 +3,7 @@
 
 /**
  * _isdigit - checks if it is fully a number
- * @num: string to validate
+ * @c: string to validate
  * Return: 1 if is digit otherwise 0
  */
 
