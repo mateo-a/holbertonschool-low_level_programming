@@ -2,36 +2,6 @@
 #include <string.h>
 
 /**
- * _atoi - Function that convert a string to an integer
- *
- * @s: pointer string
- *
- * Return: value the pointer to dest
- */
-
-int _atoi(char *s)
-{
-	int i, sign;
-	unsigned int num;
-
-	sign = 1;
-	i = 0;
-	num = 0;
-	while ((s[i] < '0' || s[i] > '9') && (s[i] != '\0'))
-	{
-		if (s[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while ((s[i] >= '0') && (s[i] <= '9'))
-	{
-		num = num * 10 + (s[i] - '0');
-		i++;
-	}
-	return (num * sign);
-}
-
-/**
  * _isdigit - checks if it is fully a number
  * @c: string to validate
  * Return: 1 if is digit otherwise 0
@@ -81,11 +51,8 @@ int main(int argc, char *argv[])
 		puts("Error");
 		exit(98);
 	}
-        if (_atoi(argv[1]) == 0 || _atoi(argv[2]) == 0)
-        {
-                puts("0");
-                exit(0);
-        }
+	if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
+		puts("0"), exit(0);
 	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	len = l1 + l2;
 	total = calloc(len, sizeof(int *));
