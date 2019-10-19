@@ -2,42 +2,21 @@
 #include <string.h>
 
 /**
- * _isNum - checks if it is fully a number
- * @num: string to check
- * Return: 1 if all num 0 if not
+ * _isdigit - checks if it is fully a number
+ * @num: string to validate
+ * Return: 1 if is digit otherwise 0
  */
 
-int _isNum(char *num)
+int _isdigit(char *c)
 {
 	int i;
 
-	for (i = 0; num[i] != '\0'; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		if (num[i] < '0' || num[i] > '9')
-			return (0);
+		if (c[i] >= '0' && c[i] <= '9')
+			return (1);
 	}
-	return (1);
-}
-
-/**
- *_memset - sets first n bytes of the memory area
- * @s: array to set
- * @b: what to set it to
- * @n: first n bytes
- * Return: s
- */
-
-void *_memset(void *s, int b, unsigned int n)
-{
-	if (n)
-	{
-		char *d = s;
-
-		do {
-			*d++ = b;
-		} while (--n);
-	}
-	return (s);
+	return (0);
 }
 
 /**
@@ -56,51 +35,51 @@ int _strlen(char *s)
 }
 
 /**
- * main - multiple two positive numbers, it takes two arg
- * @argc: argument count
- * @argv: number to multiply
- * prints out num
+ * main - program that multiplies two positive numbers
+ *
+ * @argc: argument counter
+ * @argv: argument vector
  * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
-	int length, carry, prod, i, j, len1, len2;
-	int *result;
+	int l1, l2, len, i, j, mul, carry;
+	int *total;
 
-	if (argc != 3 || !(_isNum(argv[1])) || !(_isNum(argv[2])))
+	if (argc != 3 || !(_isdigit(argv[1])) || !(_isdigit(argv[2])))
 	{
 		puts("Error");
 		exit(98);
 	}
-	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]);
-	length = len1 + len2;
-	result = calloc(length, sizeof(int *));
-	if (result == NULL)
+	l1 = _strlen(argv[1]);
+	l2 = _strlen(argv[2]);
+	len = l1 + l2;
+	total = calloc(len, sizeof(int *));
+	if (total == NULL)
 		puts("Error"), exit(98);
-	for (i = len2 - 1; i > -1; i--)
+	for (i = l2 - 1; i > -1; i--)
 	{
 		carry = 0;
-		for (j = len1 - 1; j > -1; j--)
+		for (j = l1 - 1; j > -1; j--)
 		{
-			prod = (argv[2][i] - '0') * (argv[1][j] - '0');
-			carry =  (prod / 10);
-			result[(i + j) + 1] += (prod % 10);
-			if (result[(i + j) + 1] > 9)
+			mul = (argv[2][i] - '0') * (argv[1][j] - '0');
+			carry =  (mul / 10);
+			total[(i + j) + 1] += (mul % 10);
+			if (total[(i + j) + 1] > 9)
 			{
-				result[i + j] += result[(i + j) + 1] / 10;
-				result[(i + j) + 1] = result[(i + j) + 1] % 10;
+				total[i + j] += total[(i + j) + 1] / 10;
+				total[(i + j) + 1] = total[(i + j) + 1] % 10;
 			}
-			result[(i + j)] += carry;
+			total[(i + j)] += carry;
 		}
 	}
-	if (result[0] == 0)
+	if (total[0] == 0)
 		i = 1;
 	else
 		i = 0;
-	for (; i < length; i++)
-		printf("%d", result[i]);
+	for (; i < len; i++)
+		printf("%d", total[i]);
 	printf("\n");
-	free(result);
+	free(total);
 	return (0);
 }
