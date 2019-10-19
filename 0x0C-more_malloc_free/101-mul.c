@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	l1 = strlen(argv[1]);
 	l2 = strlen(argv[2]);
 	len = l1 + l2;
-	total = calloc(len, sizeof(int *));
+	total = calloc(len, sizeof(int));
 	if (total == NULL)
 		puts("Error"), exit(98);
 	for (i = l2 - 1; i > -1; i--)
