@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
 		puts("0"), exit(0);
 	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	len = l1 + l2;
-	total = calloc(len, sizeof(int *));
-	if (total == NULL)
+	total = calloc(len, sizeof(int));
+	if (total == NULL || l1 < l2)
 		puts("Error"), exit(98);
 	for (i = l2 - 1; i >= 0; i--)
 	{
