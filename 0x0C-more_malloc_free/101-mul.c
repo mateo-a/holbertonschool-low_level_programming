@@ -20,27 +20,6 @@ int _isdigit(char *c)
 }
 
 /**
- *_memset - sets first n bytes of the memory area
- * @s: array to set
- * @b: what to set it to
- * @n: first n bytes
- * Return: s
- */
-
-void *_memset(void *s, int b, unsigned int n)
-{
-	if (n)
-	{
-		char *d = s;
-
-		do {
-			*d++ = b;
-		} while (--n);
-	}
-	return (s);
-}
-
-/**
  * _strlen - size of string
  * @s: string to measure
  * Return: size of string
@@ -72,10 +51,9 @@ int main(int argc, char *argv[])
 		puts("Error");
 		exit(98);
 	}
-	l1 = _strlen(argv[1]);
-	l2 = _strlen(argv[2]);
+	l1 = _strlen(argv[1]), l2 = _strlen(argv[2]);
 	len = l1 + l2;
-	total = calloc(len, sizeof(int *));
+	total = calloc(len, sizeof(int));
 	if (total == NULL)
 		puts("Error"), exit(98);
 	for (i = l2 - 1; i > -1; i--)
