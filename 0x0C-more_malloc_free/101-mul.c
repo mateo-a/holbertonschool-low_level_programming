@@ -13,7 +13,7 @@ int _isdigit(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		if (c[i] >= 48 && c[i] <= 57)
+		if (c[i] < '0' || c[i] > '9')
 			return (0);
 	}
 	return (1);
