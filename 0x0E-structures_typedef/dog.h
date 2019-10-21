@@ -13,6 +13,11 @@ struct dog
 	char *owner;
 
 };
-void print_dog(struct dog *d);
+
+/**
+ * dog_t - new typedef for dog
+ */
+typedef struct dog dog_t;
 dog_t *dog_2(char *name, float age, char *owner);
+void print_dog(struct dog *d);
 #endif
