@@ -14,4 +14,5 @@ struct dog
 
 };
 void print_dog(struct dog *d);
+dog_t *dog_2(char *name, float age, char *owner);
 #endif
