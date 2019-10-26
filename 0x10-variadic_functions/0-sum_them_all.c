@@ -1,9 +1,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * sum_them_all - sum all arguements
- * @n: number of arguements
- * Return: 0 is n is 0 or return sum
+ * sum_them_all - Sum of all its parameters
+ * @n: Number of arguments
+ *
+ * Description: function that returns the
+ * sum of all its parameters.
+ * Return: The sum of all its parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
