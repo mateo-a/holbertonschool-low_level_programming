@@ -61,7 +61,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	char *sep;
-	int i = 0, j;
+	int i, j;
 	fm_t fm[] = {
 		{"c", print_c},
 		{"i", print_i},
@@ -71,8 +71,9 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(list, format);
+	i = 0;
 	sep = "";
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (j < 4)
