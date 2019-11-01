@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <stddef.h>
 #include "lists.h"
 
 /**
- * print_list - prints a singly linked list
+ * print_list - function that prints all the elements of a list_t list
  * @h: pointer to head of singly linked list
  *
  * Return: Number of elements in list
