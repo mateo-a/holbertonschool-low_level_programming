@@ -4,7 +4,7 @@
  *                           position
  *
  * @head: the head of the node
- * @idx: index of the list
+ * @index: index of the list
  * @n: data for the new node
  *
  * Return: the address of the new node, or NULL if it failed
