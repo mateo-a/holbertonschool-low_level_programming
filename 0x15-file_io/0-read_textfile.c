@@ -35,7 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 /* Write buffer in STDOUT_FILENO (1) while new_r exists*/
 	if (num_r != 0)
-		num_w = write(1, buf, num_r);
+		num_w = write(STDOUT_FILENO, buf, num_r);
 	free(buf);
 	if (close(fd) == -1 || num_w == -1 || num_r != num_w)
 		return (0);
