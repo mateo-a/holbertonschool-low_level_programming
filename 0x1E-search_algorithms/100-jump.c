@@ -17,7 +17,7 @@ int result(int *array, size_t idx, size_t high, int val, size_t siz)
 		printf("Value checked array[%lu] = [%d]\n", idx, array[idx]);
 		if (val == array[idx])
 			return (idx);
-		idx++;
+		++idx;
 	}
 	return (-1);
 }
