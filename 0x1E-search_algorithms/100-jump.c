@@ -1,27 +1,5 @@
 #include "search_algos.h"
 /**
- * result - function to check if the value is in the array
- * @array: pointer to the first element of the array to search in
- * @idx: index
- * @high: final position
- * @siz: number of elements in array
- * @val: value to search for
- * Return: the first index where value is located, otherwise -1
- */
-int result(int *array, size_t idx, size_t high, int val, size_t siz)
-{
-	while (idx <= high)
-	{
-		if (idx >= siz)
-			return (-1);
-		printf("Value checked array[%lu] = [%d]\n", idx, array[idx]);
-		if (val == array[idx])
-			return (idx);
-		++idx;
-	}
-	return (-1);
-}
-/**
  * jump_search -  searches for a value in a sorted array of integers
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
@@ -30,22 +8,43 @@ int result(int *array, size_t idx, size_t high, int val, size_t siz)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump = sqrt(size), i = 0;
+	size_t jump = sqrt(size), i = 0, j;
 
-	if (!array || size == 0)
+	if (!array)
 		return (-1);
-
+	j = jump;
 	while (i < size)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-		if (value >= array[i] && value <= array[i + jump])
+		if (j < size)
 		{
-			printf("Value found between indexes [%lu] and [%lu]\n",
-			       i, i + jump);
-			return (result(array, i, i + jump, value, size));
+			if (array[i] <= value && value <= array[j])
+			{
+				printf("Value found between indexes [%lu]\
+ and [%lu]\n", i, j);
+				break;
+			}
 		}
-		i += jump;
+		else
+		{
+			if (array[i] <= value)
+			{
+				printf("Value found between indexes [%lu]\
+ and [%lu]\n", i, j);
+				break;
+			}
+		}
+		i = j;
+		j = i + jump;
 	}
-	printf("Value found between indexes [%lu] and [%lu]\n", i - jump, i);
-	return (result(array, i - jump, i, value, size));
+	while (i <= j)
+	{
+		if (i == size)
+			return (-1);
+		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
+		i++;
+	}
+	return (-1);
 }
